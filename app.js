@@ -11,6 +11,7 @@ app.post('/edit', async (req, res)=>{
     const name = req.body.txtName
     const price = req.body.txtPrice
     const picURL = req.body.txtPic
+    const Madein = req.body.txtMadein
     //await Product.updateOne({'_id':id}, {$set: {'name':name, 'price':price, 'picURL':picURL}})
 
     var prod = await Product.findById(id)
@@ -67,11 +68,12 @@ app.post('/nameProduct', async (req,res)=>{
     const name = req.body.txtName
     const price = req.body.txtPrice
     const picURL = req.body.txtPic
+    const madein = req.body.txtMadein
 
 var mongoDB ='mongodb+srv://ngungu:ngungu@cluster0.mihzw.mongodb.net/test '
 mongoose.connect(mongoDB, { useNewUrlParser: true , useUnifiedTopology: true});
     var db = mongoose.connection;
-    const productEntity = new Product({'name':name,'price':price,'picURL':picURL})
+    const productEntity = new Product({'name':name,'price':price,'picURL':picURL, 'madein': madein})
     await productEntity.save()
     res.redirect('/')
 

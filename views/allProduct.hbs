@@ -14,7 +14,7 @@
     </form>
     <ul>
         {{#each products}}
-            <li>{{name}} - {{price}} <a style="text-decoration: none;" href="/delete?id={{_id}}" onclick="return confirm('Are you sure??')">Delete</a></li>
+            <li>{{name}} - {{price}} - {{madein}} <a style="text-decoration: none;" href="/delete?id={{_id}}" onclick="return confirm('Are you sure??')">Delete</a></li>
             <div>
                 <img src="{{picURL}}" width="400" height="250"/>
             </div>
